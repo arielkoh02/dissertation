@@ -1,0 +1,20 @@
+     
+    -------------------------------------------------------
+    |  General Lake Model (GLM)   Version 3.1.9           |
+    -------------------------------------------------------
+     
+     glm built using MSC version 1916
+Early end of file
+
+     Reading configuration from glm3.nml
+
+     nDays= 1; timestep= 3600.000000 (s)
+     Maximum lake depth is 1.000000
+     Depth where flow will occur over the crest is 0.450000
+     VolAtCrest= 3075.00000; MaxVol= 32305.00000 (m3)
+     WARNING last zone height is less than maximum depth
+        ... adding an extra zone to compensate
+     Sediment zones being set at     0.3     0.6     1.0 ... 
+     'wq_setup': split_factor 1 mobility_off 0 bioshade_feedback 1 repair_state 1 ode_method 1 benthic_mode 2 do_plots 1
+     WQ plugin active: included Num_WQ_Vars = 29
+     WARNING: Initial profiles problem - expected 12 wd_init_vals entries but got 30
