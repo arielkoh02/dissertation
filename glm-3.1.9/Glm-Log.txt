@@ -7,12 +7,11 @@
 
      Reading configuration from glm3.nml
 
-     nDays= 1; timestep= 3600.000000 (s)
+     nDays= 3288; timestep= 3600.000000 (s)
      NOTE: values for crest_elev not provided, assuming max elevation, H[bsn]
-     Maximum lake depth is 9.300000
-     Depth where flow will occur over the crest is 9.300000
-     VolAtCrest= 322007.40932; MaxVol= 322007.40932 (m3)
-     'sediment' section present, simulating sediment heating
-       *sed_temp_mean[0] =   11.39073
-     Sediment zones being set at     5.0     9.5     0.0 ... 
-     'wq_setup': split_factor 1 mobility_off 0 bioshade_feedback 1 repair_state 1 ode_method 1 benthic_mode 2 do_plots 1
+     Maximum lake depth is 19.810000
+     Depth where flow will occur over the crest is 19.810000
+     VolAtCrest= 7711856.01031; MaxVol= 7711856.01031 (m3)
+     No 'snowice' section, setting defaults & assuming no snowfall
+     No 'sediment' section, turning off sediment heating
+     'wq_setup': split_factor 1 mobility_off 0 bioshade_feedback 1 repair_state 1 ode_method 1 benthic_mode 0 do_plots 1
