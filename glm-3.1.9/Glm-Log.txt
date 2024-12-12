@@ -4,17 +4,15 @@
     -------------------------------------------------------
      
      glm built using MSC version 1916
-Early end of file
 
      Reading configuration from glm3.nml
 
      nDays= 1; timestep= 3600.000000 (s)
-     Maximum lake depth is 1.000000
-     Depth where flow will occur over the crest is 0.450000
-     VolAtCrest= 3075.00000; MaxVol= 32305.00000 (m3)
-     WARNING last zone height is less than maximum depth
-        ... adding an extra zone to compensate
-     Sediment zones being set at     0.3     0.6     1.0 ... 
+     NOTE: values for crest_elev not provided, assuming max elevation, H[bsn]
+     Maximum lake depth is 9.300000
+     Depth where flow will occur over the crest is 9.300000
+     VolAtCrest= 322007.40932; MaxVol= 322007.40932 (m3)
+     'sediment' section present, simulating sediment heating
+       *sed_temp_mean[0] =   11.39073
+     Sediment zones being set at     5.0     9.5     0.0 ... 
      'wq_setup': split_factor 1 mobility_off 0 bioshade_feedback 1 repair_state 1 ode_method 1 benthic_mode 2 do_plots 1
-     WQ plugin active: included Num_WQ_Vars = 29
-     WARNING: Initial profiles problem - expected 12 wd_init_vals entries but got 30
