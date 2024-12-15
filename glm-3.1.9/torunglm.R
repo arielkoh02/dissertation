@@ -10,3 +10,4 @@ setwd("C:/Users/ASUS/Desktop/UoE/Dissertation/dissertation/glm-3.1.9")
 glmgui::glmGUI()
 
 run_glm()
+   

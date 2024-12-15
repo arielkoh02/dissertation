@@ -17,7 +17,7 @@
             'aed2_silica',
             'aed2_nitrogen',
             'aed2_phosphorus',
-            'aed2_organic_matter',
+!           'aed2_organic_matter',
             'aed2_phytoplankton',
             'aed2_zooplankton',
             'aed2_tracer',
@@ -370,61 +370,61 @@
 !        -
 !
 !-------------------------------------------------------------------------------
-&aed2_organic_matter
+!&aed2_organic_matter
    !-- Initial concentrations for OM variables (mmol/m3)
-   pon_initial = 50.0
-   don_initial = 50.0
-   pop_initial = 1.0
-   dop_initial = 1.0
-   poc_initial = 80.0
-   doc_initial = 80.0
+!   pon_initial = 50.0
+!   don_initial = 50.0
+!   pop_initial = 1.0
+!   dop_initial = 1.0
+!   poc_initial = 80.0
+!   doc_initial = 80.0
    !-- breakdown and mineralisation (basic pool)
-   Rdom_minerl = 0.01
-   theta_minerl = 1.08
-   Kpom_minerl = 31.25
-   Kdom_minerl = 31.25
-   simDenitrification = 1
-   don_miner_product_variable='NIT_amm'
-   dop_miner_product_variable='PHS_frp'
-   doc_miner_reactant_var='OXY_oxy'
-   doc_miner_product_variable= 'CAR_dic'
-   f_an = 0.50
-   K_nit = 10.0
+!   Rdom_minerl = 0.01
+!   theta_minerl = 1.08
+!   Kpom_minerl = 31.25
+!   Kdom_minerl = 31.25
+!   simDenitrification = 1
+!   don_miner_product_variable='NIT_amm'
+!   dop_miner_product_variable='PHS_frp'
+!   doc_miner_reactant_var='OXY_oxy'
+!   doc_miner_product_variable= 'CAR_dic'
+!   f_an = 0.50
+!   K_nit = 10.0
    !-- Light related parameters
-   KeDOM = 0.03
-   KePOM = 0.096
-   KeDOMR = 0.15
-   KeCPOM = 0.00096
-   simphotolysis = .false.
-   photo_c = 0.75
+!   KeDOM = 0.03
+!   KePOM = 0.096
+!   KeDOMR = 0.15
+!   KeCPOM = 0.00096
+!   simphotolysis = .false.
+!   photo_c = 0.75
    !-- particle settling parameters     
-   settling           =   1
-   w_pom              =  -0.01
-   d_pom              =   1e-5
-   rho_pom            =   1.2e3
-   w_cpom             =  -0.01
-   d_cpom             =   1e-5
-   rho_cpom           =   1.4e3
+!   settling           =   1
+!   w_pom              =  -0.01
+!   d_pom              =   1e-5
+!   rho_pom            =   1.2e3
+!   w_cpom             =  -0.01
+!   d_cpom             =   1e-5
+!   rho_cpom           =   1.4e3
    !-- sediment interaction parameteres (basic model)
-   resuspension       =   1
-   resus_link         =  'NCS_resus'
-   sedimentOMfrac     =   0.0002
-   Xsc                =   0.5
-   Xsn                =   0.05
-   Xsp                =   0.005   
-   Fed_don = 5.0
-   Fsed_dop = -900.0
-   Fsed_doc = 0.00
-   Ksed_dom = 4.5
-   theta_sed_dom = 1.08
+!   resuspension       =   1
+!   resus_link         =  'NCS_resus'
+!   sedimentOMfrac     =   0.0002
+!   Xsc                =   0.5
+!   Xsn                =   0.05
+!   Xsp                =   0.005   
+!   Fed_don = 5.0
+!   Fsed_dop = -900.0
+!   Fsed_doc = 0.00
+!   Ksed_dom = 4.5
+!   theta_sed_dom = 1.08
 !  Fsed_pon_variable='SDF_Fsed_pon'
 !  Fsed_don_variable='SDF_Fsed_don'
 !  Fsed_pop_variable='SDF_Fsed_pop'
 !  Fsed_dop_variable='SDF_Fsed_dop'
 !  Fsed_poc_variable='SDF_Fsed_poc'
 !  Fsed_doc_variable='SDF_Fsed_doc'
-   diag_level         =  10
-/
+!   diag_level         =  10
+!/
 
 !###############################################################################
 ! aed2_phytoplankton - AED phytoplankton model
@@ -477,6 +477,8 @@
    si_uptake_target_variable='SIL_rsi'
    do_uptake_target_variable='OXY_oxy'
    c_uptake_target_variable='CAR_dic'
+  dbase = 'aed2/aed_phyto_pars.nml'
+  extra_diag = .true.
 /
 
 !###############################################################################
