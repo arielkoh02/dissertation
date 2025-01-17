@@ -1,0 +1,1 @@
+the glm is not letting me output the phytoplankton numbers anymore - its just time,temp,salt
