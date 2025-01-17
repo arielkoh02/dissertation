@@ -72,10 +72,10 @@
 !-------------------------------------------------------------------------------
 &time
    timefmt  = 3                       ! Choose 2 (start/stop) or 3 (num_days)
-   start    = '1997-01-01 00:00:00'
-   stop     = '1999-01-01 00:00:00'
+   start    = '2002-01-01 00:00:00'
+   stop     = '2003-01-01 00:00:00'
    dt       = 3600.0
-   num_days = 730
+   num_days = 365
   !timezone = 7.0
 /
 !-------------------------------------------------------------------------------
@@ -92,7 +92,7 @@
    csv_point_fname = 'WQ_'
    csv_point_at = 5.
    csv_point_nvars = 3
-   csv_point_vars = 'temp','salt','PHY_tphy'
+   csv_point_vars = 'temp','salt', 'PHY_tphy'
    ! Combined outlet file & overflow
 !   csv_outlet_allinone = .false.
 !   csv_outlet_fname = 'outlet_'
