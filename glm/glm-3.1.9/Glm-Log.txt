@@ -1,0 +1,17 @@
+     
+    -------------------------------------------------------
+    |  General Lake Model (GLM)   Version 3.1.9           |
+    -------------------------------------------------------
+     
+     glm built using MSC version 1916
+
+     Reading configuration from glm3.nml
+
+     nDays= 3288; timestep= 3600.000000 (s)
+     NOTE: values for crest_elev not provided, assuming max elevation, H[bsn]
+     Maximum lake depth is 19.810000
+     Depth where flow will occur over the crest is 19.810000
+     VolAtCrest= 7711856.01031; MaxVol= 7711856.01031 (m3)
+     No 'snowice' section, setting defaults & assuming no snowfall
+     No 'sediment' section, turning off sediment heating
+     'wq_setup': split_factor 1 mobility_off 0 bioshade_feedback 1 repair_state 1 ode_method 1 benthic_mode 0 do_plots 1

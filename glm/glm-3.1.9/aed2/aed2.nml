@@ -1,0 +1,206 @@
+! .***(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((*.!
+!.(((((((((((((((((((((((/////****/////((((((((((((((((((((((((((((((((((((((((!
+!((((((((((((((((((/*,,,...,,,,************//((((((((((((((((((((((((((((((((((!
+!((((((((((((((/*.....**//((((((((((((((((////*//((((((((((((((((((((((((((((((!
+!(((((((((((((/,.  .,///((((((((((((((((((((//////(((((((((((((((((((((((((((((!
+!((((((((((//,  ,**/(((((((((((((((((((((((((((((//((((((((((((((((((((((((((((!
+!(((((((((/,,  ,*//((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((!
+!(((((((/*.  .*/(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((!
+!((((((/*. ,,/(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((!
+!((((((/. .**/(((((((((((((///////(((((///////////////////////////////(((((((((!
+!((((//,  *//(((((((((((((/,     .**/(/..             ,.            ...*/((((((!
+!((((**. ,/((((((((((((((/*.      ..*(/..   .,,,,,,,,**,    .,,,,,..    .,//(((!
+!(((/,,  ,/((((((((((((((/,    .    *//..   ,**////////,    .*/////*..   .**/((!
+!(((/,, .*((((((((((((((/*    ,*.   .**..   ,//(((((((/,    ./((((((//,   ..*((!
+!(((/.. .*((((((((((((((*.  ..*/*.   .*,,    ......**//,    ./((((((((*.    ,/(!
+!(((/.. .*((((((((((((//,   ,,/(/.   .,,,          ,,//,    ./((((((((*.    ,/(!
+!(((/,, .*/((((((((((/**.   ,,***,    .,,.  .******//(/,    ./((((((//*.  ..*/(!
+!(((/**. ,/((((((((((*..               ..,. ,//(((((((/,    ./(((((/**.   ,,/((!
+!((((**. .*(((((((((/,     .........   ..,,.,//////////,    .*/////*..   .**/((!
+!((((//*  ,//((((((/*.   .*/((((((//,    .,.         .,.               .,/(((((!
+!((((((/,  ,,/(((((/,....*/(((((((((/,....,*,........,*,...........,**//(((((((!
+!(((((((*. ..*/((((//***//(((((((((((//**////********////********/////(((((((((!
+!((((((((/,   ,/(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((!
+!(((((((((/**. .,//((((((((((((((((((((((((((((((//((((((((((((((((((((((((((((!
+!((((((((((//*. .,,//(((((((((((((((((((((((((((///((((((((((((((((((((((((((((!
+!(((((((((((((//,.. .,**/((((((((((((((((((//////((((((((((((((((((((((((((((((!
+!(((((((((((((((/**,....,*////((((((((/////**///(((((((((((((((((((((((((((((((!
+!(((((((((((((((((((//**,,....,,,,,,,,***///(((((((((((((((((((((((((((((((((((!
+!.((((((((((((((((((((((((((////////((((((((((((((((((((((((((((((((((((((((**.!
+!###############################################################################
+! aed2_models  :  List of AED2 modules to be simulated
+!-------------------------------------------------------------------------------
+!
+! List here the available aed2 modules to be included in the simulation.
+!       It is important they are listed in the correct order so dependencies
+!       can be set during the model set-up phase.
+!
+! For further detail about available AED modules visit:
+!       http://aquatic.science.uwa.edu.au/research/models/AED/
+!
+! NOTE: This example only includes CORE modules without all values and options
+!       configured. Refer to the web-links for summary tables of modules
+!       parameters, and  refer to AED2+ documentation for details of
+!       configuration of the PLUS modules.
+!
+!-------------------------------------------------------------------------------
+&aed2_models
+   models = 'aed2_organic_matter',
+            'aed2_phytoplankton',
+            'aed2_totals'
+/
+
+!###############################################################################
+! OGM: aed2_organic_matter - AED organic matter model
+!
+! Refer to the below link for module settings & parameter details:
+! http://aquatic.science.uwa.edu.au/research/models/AED/aed_organic_matter.html
+!
+!-------------------------------------------------------------------------------
+&aed2_organic_matter
+   !-- Initial concentrations for OM variables (mmol/m3)
+     poc_initial  =  78.5
+     doc_initial  =  39.9
+     pon_initial  =   8.3
+     don_initial  =   1.3
+     pop_initial  =   8.3
+     dop_initial  =   1.5
+     docr_initial = 350.0
+     donr_initial =  13.0
+     dopr_initial =   3.0
+     cpom_initial = 100.0
+   !-- Breakdown and mineralisation (basic pool)
+     Rpoc_hydrol  =   0.05
+     Rdoc_minerl  =   0.001
+     Rpon_hydrol  =   0.05
+     Rdon_minerl  =   0.005
+     Rpop_hydrol  =   0.05
+     Rdop_minerl  =   0.001
+     theta_hydrol =   1.08
+     theta_minerl =   1.08
+     Kpom_hydrol  =  31.25
+     Kdom_minerl  =  31.25
+     simDenitrification = 1
+     dom_miner_oxy_reactant_var = 'OXY_oxy'
+   ! dom_miner_no2_reactant_var = 'NIT_no2'
+   ! dom_miner_n2o_reactant_var = 'NIT_n2o'
+   ! dom_miner_fe3_reactant_var = 'GEO_feiii'
+   ! dom_miner_so4_reactant_var = 'GEO_so4'
+   ! dom_miner_ch4_reactant_var = 'CAR_ch4'
+     doc_miner_product_variable = ''
+     don_miner_product_variable = 'NIT_amm'
+     dop_miner_product_variable = 'PHS_frp'
+     dom_miner_nit_reactant_var = 'NIT_nit'
+     f_an = 1.
+     K_nit               = 10.0
+   ! Kin_denitrat        = 20.0
+   ! Kin_denitrit        = 0.297
+   ! Kin_denitrous       = 0.205
+   ! Klim_denitrit       = 1
+   ! Klim_denitrous      = 1
+   ! Kpart_denitrit      = 1
+
+   !-- Refractory organic matter (optional)
+     simRPools    = .false.
+     Rdomr_minerl = 0.0001
+     Rcpom_bdown  = 0.0001
+     X_cpom_n     = 0.0005
+     X_cpom_p     = 0.0001
+
+    !-- Light related parameters
+     KeDOM         = 0.000005
+     KePOM         = 0.00096
+     KeDOMR        = 0.10000    ! = 1 (assuming KeDOMR is applied to CDOM in /m)
+     KeCPOM        = 0.00096    ! = 0.08 (/m)/(mg/L)  /83.3  (mmol/m3)/(mg/L)
+     simphotolysis = .false.    ! .true.
+    !photo_fmin
+     photo_c       = 0.75
+
+    !-- Particle settling parameters
+     settling     =  3
+     w_pom        = -0.06
+     d_pom        =  1e-5
+     rho_pom      = 1.2e3
+     w_cpom       = -0.01
+     d_cpom       =  1e-5
+     rho_cpom     = 1.4e3
+
+    !-- Sediment interaction parameters (basic model)
+     resuspension = 0
+     resus_link   = 'NCS_resus'
+     sedimentOMfrac = 0.0002
+     Xsc = 0.5
+     Xsn = 0.05
+     Xsp = 0.005
+     Fsed_doc = 0.0
+     Fsed_don = 0.0
+     Fsed_dop = 0.0
+     Ksed_dom = 4.5
+     theta_sed_dom = 1.08
+     !Fsed_doc_variable = 'SDF_Fsed_doc'
+     !Fsed_don_variable = 'SDF_Fsed_don'
+     !Fsed_dop_variable = 'SDF_Fsed_dop'
+
+     !-- Other options
+      extra_diag = .false. !.true.
+	  
+	  		
+!###############################################################################
+! PHY: aed2_phytoplankton - AED phytoplankton model
+!
+! Refer to the below link for module settings & parameter details:
+! http://aquatic.science.uwa.edu.au/research/models/AED/aed_phytoplankton.html
+!
+!-------------------------------------------------------------------------------
+&aed2_phytoplankton
+!-- Configure phytoplankton groups to simulate
+  num_phytos   =    1
+  the_phytos   =    1
+  settling     =    1
+!-- Benthic phytoplankton group (microphytobenthos)
+  do_mpb       =    1
+  R_mpbg       =    0.5
+  R_mpbr       =    0.05
+  I_Kmpb       =  100.
+  mpb_max      = 2000.
+  resuspension =    0.45
+  n_zones      =    4
+  active_zones =    2,3,4,5
+  resus_link   = 'NCS_resus'
+!-- Set link variables to other modules
+  p_excretion_target_variable  ='OGM_dop'
+  n_excretion_target_variable  ='OGM_don'
+  c_excretion_target_variable  ='OGM_doc'
+  si_excretion_target_variable =''
+  p_mortality_target_variable  ='OGM_pop'
+  n_mortality_target_variable  ='OGM_pon'
+  c_mortality_target_variable  ='OGM_poc'
+  si_mortality_target_variable =''
+  p1_uptake_target_variable    ='PHS_frp'
+  n1_uptake_target_variable    ='NIT_nit'
+  n2_uptake_target_variable    ='NIT_amm'
+  si_uptake_target_variable    =''
+  do_uptake_target_variable    ='OXY_oxy'
+  c_uptake_target_variable     =''
+!-- General options
+  dbase = 'C:/Users/ASUS/Desktop/UoE/Dissertation/glm-3.1.9/aed2/aed2_phyto_pars.nml'
+  diag_level = 1
+/
+	  
+!###############################################################################
+! TOT: aed2_totals
+!
+!-------------------------------------------------------------------------------
+&aed2_totals
+   TN_vars =  'NIT_nit','NIT_amm','OGM_don','OGM_pon','PHY_green_IN'
+   TN_varscale = 1.0, 1.0, 1.0, 1.0, 0.15
+
+   TP_vars =  'PHS_frp','PHS_frp_ads','OGM_dop','OGM_pop','PHY_green_IP'
+   TP_varscale = 1.0, 1.0, 1.0, 1.0, 0.01
+
+   TOC_vars = 'OGM_doc','OGM_poc','PHY_green','PHY_diatom','PHY_crypto'
+   TOC_varscale = 1.0, 1.0, 1.0, 1.0, 1.0
+
+!  TSS_vars = 'NCS_ss1','PHY_green' !, ....
+!  TSS_varscale = 0.1,0.1           !,  <vector same length as TSS names>
+/
